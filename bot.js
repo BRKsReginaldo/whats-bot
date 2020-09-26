@@ -47,6 +47,22 @@ const rules = [
             type: 'chat',
             body: 'porra {{sender.name}}, ta maluco? kkkkkk'
         }
+    },
+    {
+        query: {
+            'sender.name': {
+                $regex: 'vinicius',
+                $options: 'i'
+            },
+            body: {
+                $regex: '^o+i+(!+)?',
+                $options: 'i'
+            }
+        },
+        response: {
+            type: 'chat',
+            body: 'fala {{sender.name}}, tudo beleza?'
+        }
     }
 ]
 
